@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lyft Rides</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <div class="brand">LYFT RIDES</div>
+      <section id="empty" hidden>
+        <h1>No pending ride</h1>
+        <p id="capture-status">Refresh the Lyft Concierge tab to start capture.</p>
+      </section>
+      <section id="ride" hidden>
+        <h1 id="name">Pending customer</h1>
+        <div id="estimate" class="estimate" hidden>
+          <strong id="estimate-main"></strong>
+          <span id="demand"></span>
+        </div>
+        <dl>
+          <div id="phone-row"><dt>Phone</dt><dd id="phone"></dd></div>
+          <div id="pickup-row"><dt>Pickup</dt><dd id="pickup"></dd></div>
+          <div id="dropoff-row"><dt>Drop-off</dt><dd id="dropoff"></dd></div>
+        </dl>
+        <p id="age" class="age"></p>
+        <button id="clear">Clear reminder</button>
+      </section>
+      <button id="settings" class="settings">Settings</button>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

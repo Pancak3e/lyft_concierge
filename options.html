@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lyft Rides Settings</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="mark">LR</div>
+        <div>
+          <p class="eyebrow">LYFT RIDES</p>
+          <h1>Connect your workflow</h1>
+          <p class="intro">Configure the two sites and the CRM canned job used for ride expenses.</p>
+        </div>
+      </header>
+
+      <form id="settings-form">
+        <section>
+          <h2>Sites</h2>
+          <label for="crm-url">CRM URL</label>
+          <input id="crm-url" name="crmUrl" type="url" required placeholder="https://crm.example.com/your/shop">
+          <p class="hint">Enter your shop or organization URL. Repair-order pages must be beneath this URL.</p>
+
+          <label for="lyft-url">Lyft Concierge URL</label>
+          <input id="lyft-url" name="lyftUrl" type="url" required placeholder="https://www.lyft.com/concierge/organization/your-organization">
+          <p class="hint">Only this organization page and its subpages will be monitored.</p>
+        </section>
+
+        <section>
+          <h2>CRM canned job</h2>
+          <label for="canned-job-id">Canned job ID</label>
+          <input id="canned-job-id" name="cannedJobId" type="number" min="1" step="1" required placeholder="1234567">
+          <p class="hint">The numeric canned sublet/job identifier from your CRM request payload.</p>
+
+          <label for="job-keyword">Ride item keyword</label>
+          <input id="job-keyword" name="jobKeyword" type="text" maxlength="80" value="Lyft" placeholder="Lyft">
+          <p class="hint">Used to identify the created sublet item whose cost should be updated.</p>
+        </section>
+
+        <div id="status" role="status" aria-live="polite"></div>
+        <button type="submit">Save and grant site access</button>
+      </form>
+
+      <footer>Settings are stored in Chrome. Authentication tokens and ride details remain in temporary session storage.</footer>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
